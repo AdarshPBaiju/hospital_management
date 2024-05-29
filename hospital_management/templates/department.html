@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block title %}
+Departments
+{% endblock %}
+{% block content %}
+<h1 class="department-heading">Hospital Departments</h1>
+
+{% if dept %}
+    <ul class="department-list">
+        {% for department in dept %}
+            <li class="department-item">
+                <strong>{{ department.dep_name }}</strong><br>
+                {{ department.dep_description }}
+            </li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p class="no-department-message">No departments available.</p>
+{% endif %}
+
+{% endblock  %}

@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% block title %}
+Booking
+{% endblock %}
+{% block content %}
+<div class="appointment-container">
+    <h2>Book an Appointment</h2>
+    <form method="post" action="{% url 'booking' %}">
+        {% csrf_token %}
+        <label for="{{ form.p_name.id_for_label }}">Patient Name:</label>
+        {{ form.p_name }}
+        
+        <label for="{{ form.p_phone.id_for_label }}">Phone Number:</label>
+        {{ form.p_phone }}
+        
+        <label for="{{ form.symptoms.id_for_label }}">Symptoms:</label>
+        {{ form.symptoms }}
+        
+        <label for="{{ form.doc_name.id_for_label }}">Doctor:</label><br>
+        {{ form.doc_name }}
+
+        
+        <br><br><label for="{{ form.booking_date.id_for_label }}">Booking Date:</label>
+        {{ form.booking_date }}
+        
+        <br><br><button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    
+</div>
+
+
+{% endblock  %}

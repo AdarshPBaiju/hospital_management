@@ -1,0 +1,24 @@
+{% load static %}
+<section class="about_section layout_padding">
+  <div class="container  ">
+    {% for a in content %}
+    <div class="row">
+      <div class="col-md-6 ">
+        <div class="img-box">
+          <img src="{{a.image.url}}" alt="man">
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="detail-box">
+          <div class="heading_container">
+            <h2>{{a.heading}}</h2>
+          </div>
+          <p>{{a.content}}</p>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+<!-- end about section -->
